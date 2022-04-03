@@ -14,9 +14,11 @@ struct ListNode {
     }
 };
 
-ListNode* middleOfList(ListNode* head) {
+// using the count of nodes in single iteration
+ListNode* middleOfList1(ListNode* head) {
     ListNode* mid = head;
     int count = 1;
+    // mid pointer moves in every other iteration
     while(head != nullptr) {
         if(count % 2 == 0) {
             mid = mid -> next;
@@ -25,6 +27,20 @@ ListNode* middleOfList(ListNode* head) {
         count++;
     }
     return mid;
+}
+
+// Optimized - using fast and slow pointers
+ListNode* middleofList2(ListNode* head) {
+    ListNode * fast = head, * slow = head;
+    while(fast != nullptr) {
+        fast = fast -> next;
+        if(fast == nullptr) {
+            return slow;  
+        }
+        slow = slow  -> next;
+        fast = fast -> next;
+    }
+    return slow; 
 }
 
 int main() {
@@ -37,7 +53,7 @@ int main() {
         temp -> next = new ListNode(x);
         temp = temp -> next;
     }
-    ListNode* res = middleOfList(headptr -> next);
+    ListNode* res = middleOfList2(headptr -> next);
     cout << res -> data << endl;
     return 0;
 }
