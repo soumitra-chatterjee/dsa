@@ -41,4 +41,4 @@ int main() {
     cout << res -> data << endl;
     return 0;
 }
-}
+
