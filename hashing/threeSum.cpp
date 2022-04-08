@@ -39,48 +39,14 @@ vector<vector<int>> threeeSum(vector<int>& A) {
 void solve() {
 	
 	vector<int> a;
-	
-	// for better usability and responsiveness
-	// take the input as string and process it
-	// for example like "[1,2,4]"
-	string inp;
-	cin >> inp;
-	
-	if(inp.front() != '[' || inp.back() != ']') {
-		cout << "wrong input format\n";
-		return;
+	int n, x;
+	cin >> n;
+	while(n--) {
+		cin >> x;
+		a.push_back(x);
 	}
-	
-	int L = inp.size();
-	for(int i = 1; i < L - 1; ) {
-		if(inp[i] == '') {
-			cout << "wrong input format\n";
-			return;
-		}
-		int j = i;
-		while(inp[j+1] != ',') {
-			j++;
-		}
-		
-		string num_str = inp.substr(i, j - i + 1);
-		
-		int num = 0;
-		for(char c: num_str) {
-			if(c == ' ') {
-				cout << num_str << "is not a single integer\n";
-				return;
-			}
-			num = num * 10 + (c - '0');
-		}
-		
-		a.push_back(num);
-		
-		// move the 'i' to the next number
-		i = j + 2;
-	}
-	
 	vector<vector<int>> res = threeSum(a);
-	
+		
 	for(vector<int> &v: res) {
 		for(int &e: v) {
 			cout << e << " ";
