@@ -5,7 +5,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> threeeSum(vector<int>& A) {
+vector<vector<int>> threeSum1(vector<int>& A) {
 	int n = A.size();
 	// store frequencies of occurance in a hash-map
 	unordered_map<int, int> freq;  
@@ -42,7 +42,7 @@ vector<vector<int>> threeeSum(vector<int>& A) {
 
 // better version - using two pointers method
 
-vector<vector<int>> threeeSum(vector<int>& A) {
+vector<vector<int>> threeSum2(vector<int>& A) {
 	vector<vector<int>> res;
 	for(int i = 0; i < A.size() - 2; i++) {
 		if(i != 0 && A[i] == A[i-1]) {
@@ -84,7 +84,7 @@ void solve() {
 		cin >> x;
 		a.push_back(x);
 	}
-	vector<vector<int>> res = threeSum(a);
+	vector<vector<int>> res = threeSum2(a);
 		
 	for(vector<int> &v: res) {
 		for(int &e: v) {
