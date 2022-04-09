@@ -35,7 +35,46 @@ vector<vector<int>> threeeSum(vector<int>& A) {
 	return vector<vector<int>>(s.begin(), s.end());
 }
 
+// the time complexity of the above approach is O(N^2 * logM)
+// where M is the number of elements in our set 
+// the space complexity will be O(N + M)
 
+
+// better version - using two pointers method
+
+vector<vector<int>> threeeSum(vector<int>& A) {
+	vector<vector<int>> res;
+	for(int i = 0; i < A.size() - 2; i++) {
+		if(i != 0 && A[i] == A[i-1]) {
+			continue;
+		}
+		int req = 0 - A[i];
+		int low = i + 1;
+		int high = A.size() - 1;
+		while(low < high) {
+			int sum = A[low] + A[high];
+			if(sum == req) {
+				vector<int> tmp = {A[i], A[low], A[high]};
+				res.push_back(tmp);
+				
+				while(low < high && A[low] == A[low+1]) low++;
+				while(low < high && A[high] == A[high-1]) high--;
+				
+				low++;
+				high--;
+			}
+			else if(sum < req) {
+				low++;
+			}
+			else {
+				high--;
+			}
+		}
+	}
+	return res;
+}
+// Now the TC is O(N^2) and auxiliary Space is constant, O(1).
+	
 void solve() {
 	
 	vector<int> a;
