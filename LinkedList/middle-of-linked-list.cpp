@@ -1,3 +1,6 @@
+// 1. find the middle of linked list , if two middles, return the second (variation - return the first)
+// 
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,6 +45,25 @@ ListNode* middleofList2(ListNode* head) {
     }
     return slow; 
 }
+
+// variation find the first middle node in case of even number nodes
+ListNode *midNode(ListNode *head) {
+    if(head == nullptr or head->next == nullptr) {
+        return head;
+    }
+    ListNode* fast = head -> next;
+    ListNode* slow = head;
+    while(fast != nullptr) {
+        fast = fast -> next;
+        if(fast == nullptr) {
+            return slow;
+        }
+        slow = slow -> next;
+        fast = fast -> next;
+    }
+    return slow;
+}
+
 
 int main() {
     ListNode* headptr = new ListNode(-1);
