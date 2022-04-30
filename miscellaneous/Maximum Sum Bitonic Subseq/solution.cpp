@@ -6,8 +6,8 @@ class BitonicSum {
     vector<int> msi;
     vector<int> msd;
 	
-	// msi[i] is the maximum sum of the
-	// increasing sub sequence that ends at index i
+	// msi[i] is the maximum sum of the increasing
+	// sub sequence that ends at index i
 	// and msd[i] is the maximum sum of the decreasing
 	// sub sequence that starts from index i
 	
