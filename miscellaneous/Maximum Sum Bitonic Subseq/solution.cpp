@@ -2,7 +2,7 @@
 // find the maximum sum bitonic subsequence from an array of N integers
 // where a sequence is bitonic if it is first incresing then decreasing
 
-class MaximumBitonicSum {
+class BitonicSum {
     vector<int> msi;
     vector<int> msd;
 	
@@ -12,7 +12,7 @@ class MaximumBitonicSum {
 	// sub sequence that starts from index i
 	
 public: 
-    int maxSumBS(int arr[] , int n )
+    int maxBitonicSum(int arr[] , int n )
     {
         msi.assign(n, 0);
         msd.assign(n, 0);
