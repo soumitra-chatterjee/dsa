@@ -5,8 +5,6 @@
 // we can get from each city to every other city.
 
 
-and the cost for building all roads is minimal.
-
 #include <bits/stdc++.h>
 using namespace std;
 
