@@ -1,10 +1,4 @@
 
-// Suppose, there are n cities and for each pair of cities
-// we are given the cost to build a road between them (if possible) 
-// Build roads in minimum cost, such that 
-// we can get from each city to every other city.
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
