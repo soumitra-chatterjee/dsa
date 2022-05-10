@@ -1,3 +1,6 @@
+// https://codeforces.com/contest/1675/problem/E
+// E. Replace With the Previous, Minimize
+
 #include <bits/stdc++.h>
 using namespace std;
  
