@@ -8,19 +8,19 @@ public:
         stack<pair<int, int>> stk;  // -> {val, count}
         stk.emplace(INF, 0);
         
-		int result = 0;
+	int result = 0;
         for(int i = N-1; i >= 0; i--) {
             int delCount = 0;
             while(nums[i] > stk.top().first) 
-			{
+	    {
                 int prevCount = stk.top().second;
                 delCount = max(delCount+1, prevCount);
                 stk.pop();
             }
-            res = max(res, delCount);
+            result = max(result, delCount);
             stk.emplace(nums[i], delCount);
         }
-        return res;
+        return result;
         
     }
 };
