@@ -1,7 +1,6 @@
 class Solution {
 public:
-    bool find132pattern(vector<int>& nums) 
-	{
+    bool find132pattern(vector<int>& nums) {
         int N = nums.size();
 		
 		// minimum before current index
