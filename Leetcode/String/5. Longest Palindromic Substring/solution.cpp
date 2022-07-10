@@ -1,5 +1,5 @@
 
-class LIS {
+class LongestPalindromicSubstring {
 public:
     string longestPalindrome(string s) {
         int N = s.length();
