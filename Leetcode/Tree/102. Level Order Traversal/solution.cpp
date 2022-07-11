@@ -25,7 +25,6 @@ public:
         return res;
     }
     
-    // better time 
     vector<vector<int>> levelOrder2(TreeNode* root) {
         if(root == nullptr) {
             return {};
