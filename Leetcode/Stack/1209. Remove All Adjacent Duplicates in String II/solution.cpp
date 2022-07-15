@@ -25,9 +25,9 @@ public:
 		}
 	}
 	return res;
-	}
+}
 	
-	string removeDuplicates2(string s, int k) {
+string removeDuplicates2(string s, int k) {
         string res = "";
         vector<pair<char, int>> stk;  // {prev distinct character, count}
         
