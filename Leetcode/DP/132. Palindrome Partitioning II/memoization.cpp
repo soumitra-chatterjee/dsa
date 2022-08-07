@@ -4,7 +4,7 @@ public:
         int N = s.size();
         vector<int> mem(N, -1);
         vector<vector<bool>> isPal(N, vector<bool> (N));
-        palin(s, isPal);
+        findPalin(s, isPal);
         return dfs(s, 0, mem, isPal);
     }
 private:
