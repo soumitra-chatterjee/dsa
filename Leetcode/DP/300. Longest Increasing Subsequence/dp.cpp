@@ -15,7 +15,7 @@ public:
         return res;
     }
 	
-	vector<int> findSeq(vector<int>& A) {
+    vector<int> findSeq(vector<int>& A) {
         int N = A.size();
         vector<int> dist(N, 1);
         vector<int> prev(N, -1);
@@ -39,6 +39,18 @@ public:
             seq.push_back(A[x]);
             x = prev[x];
         }
+ 		/*without prev array
+	while(r >= 0) {
+            seq.push_back(A[r]);
+            int y;
+            for( y = r-1; y >= 0; y--) {
+                if(A[y] < A[r] && dist[y] == dist[r] - 1) {
+                    break;
+                }
+            }
+            r = y;
+        }
+		*/
         reverse(seq.begin(), seq.end());
         return seq;
     }
