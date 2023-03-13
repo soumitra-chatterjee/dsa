@@ -2,7 +2,7 @@ class SymmetricTree {
 public:
     bool isSymmetric(TreeNode* root) {
         if(root == nullptr) {
-            return false;
+            return true;
         }
         return dfs(root->left, root->right);
     }
