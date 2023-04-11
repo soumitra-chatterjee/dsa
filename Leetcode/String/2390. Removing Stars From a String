@@ -1,0 +1,18 @@
+class RemovingStarsFromString {
+public:
+    string removeStars(string s) {
+        int N = s.size();
+        int index = 0;
+
+        for(int itr = 0; itr < N; ++itr) {
+            if(s[itr] == '*') {
+                index--;
+            }
+            else {
+                s[index] = s[itr];
+                index++;
+            }
+        }
+        return string(s.begin(), s.begin() + index);
+    }
+};
